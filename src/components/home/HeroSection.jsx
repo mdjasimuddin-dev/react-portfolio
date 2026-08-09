@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { CloudCog } from 'lucide-react';
 
 const HeroSection = () => {
   const cardVariants = {
     initial: { y: 20, opacity: 0 },
-    animate: { 
-      y: 0, 
+    animate: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.6, ease: "easeOut" }
     },
@@ -21,17 +22,20 @@ const HeroSection = () => {
     })
   };
 
+
+
+
   return (
-    <section className="relative min-h-screen flex items-center bg-[#050a15] overflow-hidden pt-32 pb-12 md:py-20">
+    <section className="relative min-h-[650px] flex items-center bg-[#050a15] overflow-hidden pt-32 pb-12 md:py-20">
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-blue-600/10 rounded-full blur-[80px] md:blur-[120px]" />
       <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-orange-500/10 rounded-full blur-[80px] md:blur-[120px]" />
 
-      <div className="container mx-auto px-5 md:px-6 relative z-10">
+      <div className="container lg:max-w-7xl mx-auto px-5 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-          
+
           {/* Left: Introduction - Mobile এ এটি উপরে থাকবে (order-1) */}
-          <motion.div 
+          <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -40,7 +44,7 @@ const HeroSection = () => {
             <h2 className="text-orange-500 font-mono tracking-widest mb-3 uppercase text-xs md:text-sm">
               // Professional Web Developer
             </h2>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] mb-6">
               I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">scalable</span> digital products.
             </h1>
             <p className="text-slate-400 text-base md:text-xl mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -48,16 +52,16 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 bg-orange-500 text-white font-bold rounded-full shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-colors text-sm md:text-base"
+                className="w-full sm:w-auto px-8 md:px-10 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-colors text-sm md:text-base"
               >
                 View My Projects
               </motion.button>
-              <motion.button 
+              <motion.button
                 whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 bg-transparent border border-slate-700 text-white font-bold rounded-full transition-all text-sm md:text-base"
+                className="w-full sm:w-auto px-8 md:px-10 py-3 bg-transparent border border-slate-700 text-white font-bold rounded-full transition-all text-sm md:text-base"
               >
                 Let's Talk
               </motion.button>
@@ -67,9 +71,9 @@ const HeroSection = () => {
           {/* Right: Animated Tech Bento Grid - Mobile এ এটি নিচে থাকবে (order-2) */}
           <div className="relative h-auto flex items-center justify-center order-2 lg:order-2 mt-10 lg:mt-0">
             <div className="grid grid-cols-2 gap-3 md:gap-4 w-full max-w-sm md:max-w-md" style={{ willChange: "transform" }}>
-              
+
               {/* React Card */}
-              <motion.div 
+              <motion.div
                 custom={0}
                 variants={cardVariants}
                 initial="initial"
@@ -83,7 +87,7 @@ const HeroSection = () => {
               </motion.div>
 
               {/* Stats Card */}
-              <motion.div 
+              <motion.div
                 custom={1}
                 variants={cardVariants}
                 initial="initial"
@@ -95,7 +99,7 @@ const HeroSection = () => {
               </motion.div>
 
               {/* Shopify/MERN Card */}
-              <motion.div 
+              <motion.div
                 custom={0.5}
                 variants={cardVariants}
                 initial="initial"
@@ -108,13 +112,13 @@ const HeroSection = () => {
                 </div>
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map(i => (
-                    <div key={i} className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-700 border-2 border-slate-900" />
+                    <div key={i} className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-700 border-2 border-slate-900"/>
                   ))}
                 </div>
               </motion.div>
 
               {/* Code Snippet Card */}
-              <motion.div 
+              <motion.div
                 custom={1.5}
                 variants={cardVariants}
                 initial="initial"

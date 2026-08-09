@@ -16,7 +16,7 @@ const Navbar = () => {
 
   // আপনার ফাইল স্ট্রাকচার অনুযায়ী মেনু আইটেম
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Intro', href: '/' },
     { name: 'Solutions', href: '#what-you-offer' },
     { name: 'Proof', href: '#success-stories' },
     { name: 'The Blueprint', href: '#how-i-work' },
@@ -36,7 +36,7 @@ const Navbar = () => {
           {/* Logo - MJU prefix added as per your style */}
           <div className="flex-shrink-0">
             <a href="#" className="text-2xl font-black tracking-tight text-white">
-              MJU<span className="text-[#FF8C00]">.DEV</span>
+              JASIM<span className="text-[#FF8C00]">.DEV</span>
             </a>
           </div>
 
