@@ -190,7 +190,7 @@ const ProjectsSection = () => {
               className="group relative bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 hover:border-white/10 rounded-2xl overflow-hidden flex flex-col h-[460px] transition-all duration-300"
             >
               {/* Project Image Wrapper */}
-              <div className="relative h-[330px] overflow-hidden bg-[#0a1120] shrink-0">
+              <div className="relative h-[325px] overflow-hidden bg-[#0a1120] shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent z-10 opacity-60 pointer-events-none" />
                 {/* absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent z-10 opacity-60 pointer-events-none */}
 
