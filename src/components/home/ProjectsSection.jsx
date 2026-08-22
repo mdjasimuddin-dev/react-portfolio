@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiGithub, FiArrowUpRight, FiCheckCircle } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiCheckCircle } from "react-icons/fi";
+import DesktopMockupPreview from "./monitorIframe";
 
 // রাইট সাইডের উইজেটের জন্য এভেলেবিলিটি কাউন্টার
 const LiveStatusCounter = ({ TargetNum, duration = 1.5 }) => {
@@ -34,7 +35,8 @@ const ProjectsSection = () => {
       tech: ["MongoDB", "Express", "React", "Node.js"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 2,
@@ -45,7 +47,8 @@ const ProjectsSection = () => {
       tech: ["React.js", "Chart.js", "Tailwind CSS", "REST API"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 3,
@@ -56,7 +59,8 @@ const ProjectsSection = () => {
       tech: ["Next.js", "TypeScript", "Zustand", "Tailwind"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 4,
@@ -67,7 +71,8 @@ const ProjectsSection = () => {
       tech: ["React.js", "WebSockets", "Framer Motion", "Tailwind"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 5,
@@ -78,7 +83,8 @@ const ProjectsSection = () => {
       tech: ["React", "Firebase Auth", "Firestore", "Tailwind"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 6,
@@ -89,8 +95,9 @@ const ProjectsSection = () => {
       tech: ["React.js", "Context API", "Spoonacular API", "CSS"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop&q=80",
-    }
+      image:
+        "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop&q=80",
+    },
   ];
 
   return (
@@ -103,10 +110,8 @@ const ProjectsSection = () => {
       <div className="absolute bottom-1/3 -left-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[130px] pointer-events-none mix-blend-screen" />
 
       <div className="container mx-auto max-w-7xl px-6 relative z-10">
-        
         {/* HEADER AREA: Left Title + Right Personal Profile Status Widget */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20 lg:mb-24">
-          
           {/* Header Left */}
           <div className="lg:col-span-7">
             <motion.div
@@ -161,7 +166,8 @@ const ProjectsSection = () => {
                   Available for Job / Freelance
                 </div>
                 <div className="text-[10px] text-slate-400/80 mt-0.5">
-                  Match Score: <LiveStatusCounter TargetNum={100} />% Ready to Deploy
+                  Match Score: <LiveStatusCounter TargetNum={100} />% Ready to
+                  Deploy
                 </div>
               </div>
             </div>
@@ -184,13 +190,18 @@ const ProjectsSection = () => {
               className="group relative bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 hover:border-white/10 rounded-2xl overflow-hidden flex flex-col h-[460px] transition-all duration-300"
             >
               {/* Project Image Wrapper */}
-              <div className="relative h-44 overflow-hidden bg-[#0a1120] shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent z-10 opacity-60" />
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-70 transition-all duration-700 ease-out"
-                />
+              <div className="relative h-[330px] overflow-hidden bg-[#0a1120] shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent z-10 opacity-60 pointer-events-none" />
+                {/* absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent z-10 opacity-60 pointer-events-none */}
+
+                {/* iframe কম্পোনেন্ট */}
+                <div className="relative z-0 w-full h-full pointer-events-auto">
+                  <DesktopMockupPreview
+                    liveUrl="https://web.programming-hero.com/"
+                    projectTitle="My Portfolio Project"
+                  />
+                </div>
+
                 <div className="absolute top-4 left-4 z-20 px-2.5 py-1 rounded bg-[#050a15]/90 border border-white/5 text-[9px] font-mono tracking-widest text-slate-400">
                   {project.tag}
                 </div>
@@ -198,61 +209,59 @@ const ProjectsSection = () => {
 
               {/* Card Body Content */}
               <div className="p-6 flex flex-col justify-between flex-grow">
-                <div>
-                  {/* Project Title */}
-                  <h3 className="text-lg font-bold tracking-tight text-white mb-2.5 group-hover:text-blue-400 transition-colors duration-200 line-clamp-1">
-                    {project.title}
-                  </h3>
+                {/* <div> */}
+                {/* Project Title */}
+                <h3 className="text-lg font-bold tracking-tight text-white mb-2.5 group-hover:text-blue-400 transition-colors duration-200 line-clamp-1">
+                  {project.title}
+                </h3>
 
-                  {/* Clean Technical Description */}
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 font-light line-clamp-4">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Footer Section inside Card */}
-                <div>
-                  {/* Tech Badges Used */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {project.tech.map((techItem, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="text-[10px] font-mono tracking-wide bg-white/[0.03] text-slate-300 border border-white/5 px-2 py-0.5 rounded"
-                      >
-                        {techItem}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Code and Live Actions Link mapping */}
-                  <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto font-mono text-xs">
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-orange-400 group/link transition-colors duration-200"
-                    >
-                      Live Demo
-                      <FiArrowUpRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-slate-400 hover:text-white transition-colors duration-200"
-                    >
-                      <FiGithub className="w-3.5 h-3.5" /> Source Code
-                    </a>
-                  </div>
-                </div>
+                {/* Clean Technical Description */}
+                <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 font-light line-clamp-4">
+                  {project.description}
+                </p>
               </div>
+
+              {/* Footer Section inside Card */}
+              {/* <div> */}
+              {/* Tech Badges Used */}
+              {/* <div className="flex flex-wrap gap-1.5 mb-5">
+                  {project.tech.map((techItem, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="text-[10px] font-mono tracking-wide bg-white/[0.03] text-slate-300 border border-white/5 px-2 py-0.5 rounded"
+                    >
+                      {techItem}
+                    </span>
+                  ))}
+                </div> */}
+
+              {/* Code and Live Actions Link mapping */}
+              {/* <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto font-mono text-xs">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-orange-400 group/link transition-colors duration-200"
+                  >
+                    Live Demo
+                    <FiArrowUpRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-semibold text-slate-400 hover:text-white transition-colors duration-200"
+                  >
+                    <FiGithub className="w-3.5 h-3.5" /> Source Code
+                  </a>
+                </div> */}
+              {/* </div>
 
               {/* Laser Hover Light Effect */}
               <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-400 transition-all duration-500" />
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

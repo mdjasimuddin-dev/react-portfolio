@@ -1,32 +1,46 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiLayout, FiServer, FiSmartphone } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { FiLayout, FiServer, FiSmartphone } from "react-icons/fi";
+import { LiaWordpressSimple } from "react-icons/lia";
 
 const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: 'Frontend Development',
-      description: 'Building responsive, high-performance, and visually stunning web applications using React, Next.js, and Tailwind CSS.',
+      title: "Frontend Development",
+      description:
+        "Building responsive, high-performance, and visually stunning web applications using React, Next.js, and Tailwind CSS.",
       icon: FiLayout,
-      glowColor: 'group-hover:border-cyan-500/50 shadow-cyan-500/10',
-      iconBg: 'bg-cyan-500/10 text-cyan-400',
+      glowColor: "group-hover:border-cyan-500/50 shadow-cyan-500/10",
+      iconBg: "bg-cyan-500/10 text-cyan-400",
     },
+
     {
       id: 2,
-      title: 'Backend & APIs',
-      description: 'Developing robust server-side logic, secure RESTful APIs, and database architectures using Node.js and Express.',
-      icon: FiServer,
-      glowColor: 'group-hover:border-blue-500/50 shadow-blue-500/10',
-      iconBg: 'bg-blue-500/10 text-blue-400',
+      title: "Wordpress Development",
+      description:
+        "Ensuring seamless cross-browser compatibility and ultra-fast mobile performance with a mobile-first design approach for wordpress website using elementor expart.",
+      icon: LiaWordpressSimple,
+      glowColor: "group-hover:border-indigo-500/50 shadow-indigo-500/10",
+      iconBg: "bg-indigo-500/10 text-indigo-400",
     },
+
     {
       id: 3,
-      title: 'Mobile Optimization',
-      description: 'Ensuring seamless cross-browser compatibility and ultra-fast mobile performance with a mobile-first design approach.',
+      title: "Backend & APIs",
+      description:
+        "Developing robust server-side logic, secure RESTful APIs, and database architectures using Node.js and Express.",
+      icon: FiServer,
+      glowColor: "group-hover:border-blue-500/50 shadow-blue-500/10",
+      iconBg: "bg-blue-500/10 text-blue-400",
+    },
+    {
+      id: 4,
+      title: "Mobile Optimization",
+      description:
+        "Ensuring seamless cross-browser compatibility and ultra-fast mobile performance with a mobile-first design approach.",
       icon: FiSmartphone,
-      glowColor: 'group-hover:border-indigo-500/50 shadow-indigo-500/10',
-      iconBg: 'bg-indigo-500/10 text-indigo-400',
+      glowColor: "group-hover:border-indigo-500/50 shadow-indigo-500/10",
+      iconBg: "bg-indigo-500/10 text-indigo-400",
     },
   ];
 
@@ -38,17 +52,17 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-cyan-400 tracking-wider uppercase mb-3">
+          <h2 className="text-xl font-semibold text-blue-500 tracking-wider uppercase mb-3">
             What I Do
           </h2>
           <p className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             Core Expertise & Services
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r md:mx-auto from-cyan-500 to-blue-500 mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-gradient-to-r md:mx-auto from-blue-500 to-blue-800 mt-4 rounded-full" />
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -62,12 +76,14 @@ const ServicesSection = () => {
               >
                 <div>
                   {/* Icon Box */}
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 ${service.iconBg}`}>
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 ${service.iconBg}`}
+                  >
                     <Icon className="w-6 h-6" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-500 transition-colors duration-300">
                     {service.title}
                   </h3>
 
@@ -78,8 +94,11 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Subtle Bottom Link/Decoration */}
-                <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center text-xs font-semibold text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
-                  LEARN MORE <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center text-xs font-semibold text-slate-500 group-hover:text-blue-500 transition-colors duration-300">
+                  LEARN MORE{" "}
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </div>
               </motion.div>
             );
